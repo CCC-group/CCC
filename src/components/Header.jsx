@@ -18,7 +18,7 @@ return (
     <div className="container-fluid">
       <div className='links'>
         <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
+        <Link href="/about">Our Team</Link>
         <Link href="/budgeting">Budgeting</Link>    
         <Link href="/Events">Events</Link>
       </div>
