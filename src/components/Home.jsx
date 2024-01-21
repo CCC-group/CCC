@@ -8,7 +8,7 @@ const Home = () => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height="100vh" // Set the height to 100% of the viewport height
+        height="100vh" 
       >
         <video autoPlay muted id="homeVideo" style={{ width: "60%" }}>
           <source
