@@ -1,29 +1,34 @@
-import React from "react";
-import { Route, Link } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
+// import { Link } from "react-router-dom";
+import { Link } from '@mui/material'
+import logo from '../assets/imgs/CCC.jpg'
 
 const Header = () => {
-  return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/budgeting">Budgeting</Link>
-          </li>
-          <li>
-            <Link to="/Events">Events</Link>
-          </li>
-        </ul>
-      </nav>
+  
+return (
+  <div className="header">
+      <a className="navbar-brand" href="/">
+        <img src={logo} 
+          alt="Logo" 
+          width="120" 
+          height="114" 
+          className="d-inline-block align-text-top"/>
+      </a>
+          <ul>
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <div className="container-fluid">
+      <div className='links'>
+        <Link href="/">Home</Link>
+        <Link href="/about">Our Team</Link>
+        <Link href="/budgeting">Budgeting</Link>    
+        <Link href="/Events">Events</Link>
+      </div>
+  </div>
+    </nav>
+      </ul>
     </div>
   );
 };
+
+
 
 export default Header;
