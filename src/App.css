@@ -3,14 +3,29 @@
 }
 
 .home {
+  position: relative;
   height: 100vh;
   background-image: url('./assets/imgs/CCC-header.jpg');
   background-size: cover;
-  opacity: 80%;
+  /* color:rgba(255, 255, 255, 1); */
 
 }
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #1d6cc0;
+  opacity: 0.18;
+}
+
 .home-1{
-  color: ivory;
+  color: white;
+  position: relative;
+  z-index:1;
   display: flex;
   justify-content: center;
   padding-top: 200px;
@@ -22,6 +37,8 @@
 .home-2 {
   width: 1010px;
   padding-top: 40px;
+  color: white;
+
 }
 
 .header {
@@ -34,7 +51,7 @@
 .header a {
   text-decoration: none;
   color:ivory;
-  padding: 10px;
+  padding: 20px;
 }
 .links {
   margin-top: 60px;
