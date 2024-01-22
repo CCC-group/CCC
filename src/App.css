@@ -12,6 +12,20 @@
 
 }
 
+.homeCol {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+#homeContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightblue;
+  height: 320px ;
+
+}
 .home::before {
   content: "";
   position: absolute;
@@ -61,6 +75,7 @@
   justify-content: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
 }
+
 
 .d-inline-block {
   margin:5px;

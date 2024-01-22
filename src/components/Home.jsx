@@ -1,6 +1,18 @@
 import { Typography, Button, Box } from "@mui/material";
 
 const Home = () => {
+  const columnStyle = {
+    flex: 1,
+    padding: "20px",
+    textAlign: "center",
+    color: "white",
+  };
+
+  const containerStyle = {
+    display: "flex",
+    justifyContent: "space-between",
+    backgroundColor: "lightblue", // Change this to your desired shade of blue
+  };
   return (
     <>
       <Box
@@ -8,7 +20,7 @@ const Home = () => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height="100vh" 
+        height="100vh"
       >
         <video autoPlay muted id="homeVideo" style={{ width: "60%" }}>
           <source
@@ -46,6 +58,26 @@ const Home = () => {
               businesses through life insurance and strategic approaches!
             </Typography>
           </div>
+        </div>
+      </div>
+
+      <div id="homeContainer">
+        <div className="homeCol" style={{ backgroundColor: "#2243b6" }}>
+          <Typography variant="h4">Our Company</Typography>
+          <p>Your text or content here</p>
+          <button>Button 1</button>
+        </div>
+
+        <div className="homeCol" style={{ backgroundColor: "#00008b"}}>
+          <Typography variant="h4">Financial Literacy Education</Typography>
+          <p>Your text or content here</p>
+          <button>Button 2</button>
+        </div>
+
+        <div className="homeCol" style={{ backgroundColor: "#318ce7" }}>
+          <Typography variant="h4">Get a Quote</Typography>
+          <p>Your text or content here</p>
+          <button>Button 3</button>
         </div>
       </div>
     </>
