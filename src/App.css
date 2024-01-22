@@ -2,9 +2,10 @@
   margin: 0;
 }
 
+
 .home {
   position: relative;
-  height: 100vh;
+  height: 115vh;
   background-image: url('./assets/imgs/CCC-header.jpg');
   background-size: cover;
   /* color:rgba(255, 255, 255, 1); */
