@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import { Link } from '@mui/material'
 import logo from '../assets/imgs/CCC.jpg'
 
@@ -19,7 +18,7 @@ return (
       <div className='links'>
         <Link href="/">Home</Link>
         <Link href="/about">Our Team</Link>
-        <Link href="/budgeting">Budgeting</Link>    
+        <Link href="/budgeting">Services</Link>    
         <Link href="/Events">Events</Link>
       </div>
   </div>
