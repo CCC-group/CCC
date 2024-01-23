@@ -1,18 +1,13 @@
-import { Typography, Button, Box } from "@mui/material";
+import { Typography, Button, Box, Link } from "@mui/material";
+import BusinessIcon from '@mui/icons-material/Business';
+import SchoolIcon from '@mui/icons-material/School';
+import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
 
 const Home = () => {
-  const columnStyle = {
-    flex: 1,
-    padding: "20px",
-    textAlign: "center",
-    color: "white",
-  };
 
-  const containerStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    backgroundColor: "lightblue", // Change this to your desired shade of blue
-  };
+  const handleOurTeam = () => {
+
+  }
   return (
     <>
       <Box
@@ -21,7 +16,9 @@ const Home = () => {
         alignItems="center"
         justifyContent="center"
         height="100vh"
+        backgroundColor='#BAD3D4'
       >
+        
         <video autoPlay muted id="homeVideo" style={{ width: "60%" }}>
           <source
             src="src/assets/pexels-tea-oebel-6568706 (2160p).mp4"
@@ -31,12 +28,16 @@ const Home = () => {
 
         <Button
           variant="contained"
-          color="primary"
-          style={{ borderRadius: 20, marginTop: "2%" }}
+          style={{ 
+            borderRadius: 20, 
+            marginTop: "2%",
+            backgroundColor:'#1D66C0',
+            textTransform: 'none'
+          }}
         >
           <Typography variant="h7" fontWeight="bold">
-            Get a Appointment <br />
-            Click here
+            Get an Appointment <br />
+           <Typography variant='h7' fontWeight='light'> Click here</Typography>
           </Typography>
         </Button>
       </Box>
@@ -62,22 +63,64 @@ const Home = () => {
       </div>
 
       <div id="homeContainer">
-        <div className="homeCol" style={{ backgroundColor: "#2243b6" }}>
-          <Typography variant="h4">Our Company</Typography>
-          <p>Your text or content here</p>
-          <button>Button 1</button>
+        <div className="homeCol" style={{ backgroundColor: "#1D66C0"}}>
+          <BusinessIcon sx={{color:'white'}} fontSize="large"/>
+
+          <Typography variant="h4" style={{padding:'10px', fontWeight:'lighter'}}>Our Company</Typography>
+          <p>Empowering individuals to grasp and create a lasting financial heritage through education, knowledge, and strategic planning.</p>
+          <Button style={{color: 'white',
+            border: 'solid #BAD3D4 2px',
+            fontSize: '20px',
+            margin:'20px',
+            textTransform: 'none',
+            lineHeight: '25px'
+            }} 
+            variant='outlined'
+            onClick={handleOurTeam}>
+              <Typography variant="h7" style={{lineHeight:'30px'}}>Meet the Team 
+                <br/> 
+                <Link href={'/about'} style={{textDecoration:'none', color:'white', fontWeight:'lighter'}}>Click Here</Link>
+                {/* <Typography variant='h7' fontWeight='light'> Click here</Typography> */}
+              </Typography>
+            </Button>
         </div>
 
-        <div className="homeCol" style={{ backgroundColor: "#00008b"}}>
-          <Typography variant="h4">Financial Literacy Education</Typography>
-          <p>Your text or content here</p>
-          <button>Button 2</button>
+        <div className="homeCol" style={{ backgroundColor: "#2243b6"}}>
+        <SchoolIcon sx={{color:'white'}} fontSize="large"/>
+          <Typography variant="h4" style={{padding:'10px', fontWeight:'lighter'}}>Financial Literacy Education</Typography>
+          <p>Teaching essential money skills: budgeting, saving, investing, debt management, and informed decision-making for a secure financial future.</p>
+          <Button style={{
+            color: 'white',
+            border: 'solid #BAD3D4 2px',
+            fontSize: '20px',
+            margin:'20px',
+            textTransform: 'none',
+            lineHeight: '25px'
+            }} variant='outlined'>
+            <Typography variant="h7">Learn More 
+              <br/> 
+              <Typography variant='h7' fontWeight='light'> Click here</Typography>
+            </Typography>
+          </Button>
         </div>
 
-        <div className="homeCol" style={{ backgroundColor: "#318ce7" }}>
-          <Typography variant="h4">Get a Quote</Typography>
-          <p>Your text or content here</p>
-          <button>Button 3</button>
+        <div className="homeCol" style={{ backgroundColor: "#3BC1DE" }}>
+          <RequestQuoteIcon sx={{color:'white'}} fontSize="large"/>
+          <Typography variant="h4" style={{padding:'10px', fontWeight:'lighter'}}>Get a Quote</Typography>
+          <p>Ensure your family's coverage, assess retirement needs, and seek aid for overdue rent. Schedule an appointment for financial guidance and support.</p>
+          <Button style={{
+            color: 'white',
+            border: 'solid #BAD3D4 2px',
+            fontSize: '20px',
+            margin:'20px',
+            textTransform: 'none',
+            lineHeight: '25px'
+            }} variant='outlined'>
+            <Typography variant="h7">Learn More 
+              <br/> 
+              <Typography variant='h7' fontWeight='light'> Click here</Typography>
+            </Typography>
+          </Button>
         </div>
       </div>
     </>

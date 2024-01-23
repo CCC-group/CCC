@@ -5,6 +5,7 @@ import Events from "./components/Events";
 import Budgeting from "./components/Budgeting";
 import About from "./components/About";
 import Header from "./components/Header";
+import Footer from './components/Footer'
 
 import "./App.css";
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Events />} />
       </Routes>
+      <Footer/>
     </>
   );
 }
