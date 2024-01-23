@@ -1,5 +1,21 @@
+
+
 * {
   margin: 0;
+}
+
+.partners {
+  max-width: 20%;
+  max-height: 20%;
+  display: block;
+  margin: 10px; 
+}
+
+.partnersContainer{
+  display: flex;
+  flex-Wrap: wrap;
+  justify-Content: space-between;
+  align-Items: center;
 }
 
 .home {
@@ -21,7 +37,7 @@
 #homeContainer {
   background-color: lightblue;
   display: flex;
-  height: 320px ;
+  height: 340px ;
   justify-content: space-between;
 }
 
