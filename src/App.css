@@ -4,19 +4,6 @@
   margin: 0;
 }
 
-.partners {
-  max-width: 20%;
-  max-height: 20%;
-  display: block;
-  margin: 10px; 
-}
-
-.partnersContainer{
-  display: flex;
-  flex-Wrap: wrap;
-  justify-Content: space-between;
-  align-Items: center;
-}
 
 .home {
   background-image: url('./assets/imgs/CCC-header.jpg');
@@ -92,6 +79,21 @@
 
 .d-inline-block {
   margin:5px;
+}
+
+.partners {
+  max-width: 20%;
+  max-height: 20%;
+  display: block;
+  margin: 10px; 
+}
+
+.partnersContainer{
+  display: flex;
+  flex-Wrap: wrap;
+  justify-Content: space-between;
+  align-Items: center;
+  margin: 50px;
 }
 
 .footer{
