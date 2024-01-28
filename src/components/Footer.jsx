@@ -12,7 +12,7 @@ const Footer = () => {
         alignItems="center"
         justifyContent="center"
         height="15vh"
-        backgroundColor='#BAD3D4'>
+        backgroundColor='#1D66C0'>
         <div className='contact-box'>
           <div style={{margin:'40px'}}>
             <p>

@@ -177,15 +177,15 @@ const Home = () => {
       </div>
 
       <div>
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center", padding:'15px' }}>
           <Typography>
             <span
               style={{
-                color: "blue",
+                color: "#2243b6",
                 fontSize: "1.5em",
                 verticalAlign: "middle",
               }}
-            >
+              >
               &mdash;&mdash;&mdash;&mdash;&mdash;
             </span>{" "}
             <h2
@@ -200,7 +200,7 @@ const Home = () => {
             </h2>{" "}
             <span
               style={{
-                color: "blue",
+                color: "#2243b6",
                 fontSize: "1.5em",
                 verticalAlign: "middle",
               }}

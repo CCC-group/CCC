@@ -1,22 +1,7 @@
-
-
 * {
   margin: 0;
 }
 
-.partners {
-  max-width: 20%;
-  max-height: 20%;
-  display: block;
-  margin: 10px; 
-}
-
-.partnersContainer{
-  display: flex;
-  flex-Wrap: wrap;
-  justify-Content: space-between;
-  align-Items: center;
-}
 
 .home {
   background-image: url('./assets/imgs/CCC-header.jpg');
@@ -52,7 +37,7 @@
   top: 0;
 }
 
-.home-1{
+.home-1 {
   align-items: center;
   color: white;
   display: flex;
@@ -94,7 +79,68 @@
   margin:5px;
 }
 
-.footer{
+.partners {
+  max-width: 20%;
+  max-height: 20%;
+  display: block;
+  margin: 10px; 
+}
+
+.partnersContainer {
+  display: flex;
+  flex-Wrap: wrap;
+  justify-Content: space-between;
+  align-Items: center;
+  margin: 50px;
+}
+
+.about-main {
+  background-color: #BAD3D4;
+  display: flex;
+  flex-direction: column;
+}
+
+.about {
+  position: relative;
+  height: 100vh;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: -150px;
+}
+
+.about-photo {
+  max-width: 20%;
+  max-height: 90%;
+  display: block;
+  margin: 10px; 
+}
+
+.about-photo-two {
+  max-width: 20%;
+  max-height: 90%;
+  display: block;
+  margin: 10px; 
+}
+
+.about-title {
+  padding: 20px;
+  text-align: center;
+  width: 600px;
+}
+
+.about-para {
+  padding: 30px;
+  text-align: left;
+  width: 600px;
+}
+.about-body {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.footer {
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -105,4 +151,5 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  color:white;
 }
