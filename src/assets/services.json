@@ -22,12 +22,12 @@
     {
         "service": "Life Insurance/Annuities",
         "description": "Financial products providing beneficiaries with a lump sum or periodic payments upon policyholder's death or retirement, ensuring financial security and income continuity for loved ones or self.",
-        "icon": ""
+        "icon": "src/assets/icons/percentage.webp"
     },
     {
         "service":"Estate Planning",
         "description": "Deliberate arrangement of assets, wills, trusts, and directives to manage their distribution after death, ensuring desired beneficiaries, minimizing taxes, and preserving legacies.",
-        "icon":""
+        "icon":"src/assets/icons/piechart.webp"
     },
     {
         "service":"Tax Advantage Strategies",
