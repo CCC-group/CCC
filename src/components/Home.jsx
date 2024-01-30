@@ -13,8 +13,16 @@ const Home = () => {
         alignItems="center"
         justifyContent="center"
         height="100vh"
-        backgroundColor="#BAD3D4"
+        backgroundColor="#dcdcdc"
       >
+        <Typography variant="h1" style={{
+          marginTop:'-90px',
+          marginBottom: '30px',
+          display:'flex', 
+          justifyContent:'center', 
+          color: '#2243b6',
+        }}>
+          Crystal Clear Consulting</Typography>
         <video autoPlay muted id="homeVideo" style={{ width: "60%" }}>
           <source
             src="src/assets/pexels-tea-oebel-6568706 (2160p).mp4"
@@ -100,7 +108,6 @@ const Home = () => {
               >
                 Click Here
               </Link>
-              {/* <Typography variant='h7' fontWeight='light'> Click here</Typography> */}
             </Typography>
           </Button>
         </div>
@@ -194,6 +201,7 @@ const Home = () => {
                 display: "inline",
                 margin: "0 10px",
                 verticalAlign: "middle",
+                fontWeight:'lighter'
               }}
             >
               Our Partners
