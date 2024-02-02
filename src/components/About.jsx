@@ -1,4 +1,4 @@
-import { Button, Box, Typography } from "@mui/material"
+import { Button, Typography } from "@mui/material"
 
 const About = () => {
   return (
@@ -34,9 +34,9 @@ const About = () => {
                 <Typography fontWeight="light">
                     {" "}
                     Click here
-              </Typography>
-          </Typography>
-                    </Button>
+                </Typography>
+                </Typography>
+              </Button>
             </div>
           </div>
         </div>

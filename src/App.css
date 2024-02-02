@@ -2,7 +2,6 @@
   margin: 0;
 }
 
-
 .home {
   background-image: url('./assets/imgs/CCC-header.jpg');
   background-size: cover;
@@ -20,7 +19,7 @@
 }
 
 #homeContainer {
-  background-color: lightblue;
+  background-color: #dcdcdc;
   display: flex;
   height: 340px ;
   justify-content: space-between;
@@ -95,8 +94,7 @@
 }
 
 .about-main {
-  background-color: #BAD3D4;
-  display: flex;
+  background-color: #dcdcdc;
   flex-direction: column;
 }
 
@@ -138,6 +136,15 @@
   flex-direction: column;
   font-size: 20px;
   padding: 20px;
+}
+
+.service-body {
+  background-color: #dcdcdc;
+}
+
+.service-button {
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
