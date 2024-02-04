@@ -2,9 +2,9 @@ import { Typography, Button, Box, Link } from "@mui/material";
 import BusinessIcon from "@mui/icons-material/Business";
 import SchoolIcon from "@mui/icons-material/School";
 import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
+import ModalForm from "./Modal";
 
-const Home = () => {
-  const handleOurTeam = () => {};
+const Home = ({open, handleOpen, handleClose}) => {
   return (
     <>
       <Box
@@ -93,7 +93,7 @@ const Home = () => {
               lineHeight: "25px",
             }}
             variant="outlined"
-            onClick={handleOurTeam}
+            
           >
             <Typography variant="h7" style={{ lineHeight: "30px" }}>
               Meet the Team
@@ -170,6 +170,7 @@ const Home = () => {
               lineHeight: "25px",
             }}
             variant="outlined"
+            onClick={handleOpen}
           >
             <Typography variant="h7">
               Learn More
@@ -182,79 +183,7 @@ const Home = () => {
           </Button>
         </div>
       </div>
-
-      <div>
-        <div style={{ textAlign: "center", padding:'15px' }}>
-          <Typography>
-            <span
-              style={{
-                color: "#2243b6",
-                fontSize: "1.5em",
-                verticalAlign: "middle",
-              }}
-              >
-              &mdash;&mdash;&mdash;&mdash;&mdash;
-            </span>{" "}
-            <h2
-              style={{
-                color: "black",
-                display: "inline",
-                margin: "0 10px",
-                verticalAlign: "middle",
-                fontWeight:'lighter'
-              }}
-            >
-              Our Partners
-            </h2>{" "}
-            <span
-              style={{
-                color: "#2243b6",
-                fontSize: "1.5em",
-                verticalAlign: "middle",
-              }}
-            >
-              &mdash;&mdash;&mdash;&mdash;&mdash;
-            </span>
-          </Typography>
-          <div className="partnersContainer">
-            <img
-              className="partners"
-              src="src/assets/imgs/mutual-of-omaha-logo-blue-png.png"
-              alt="Mutual of Omaha Logo"
-            />
-            <img
-              className="partners"
-              src="src/assets/imgs/Silac.png"
-              alt="Silac Logo"
-            />
-            <img
-              className="partners"
-              src="src/assets/imgs/americanNational.png"
-              alt="American National"
-            />
-            <img
-              className="partners"
-              src="src/assets/imgs/forestersFinancialLogo.png"
-              alt="Forester Financial"
-            />
-            <img
-              className="partners"
-              src="src/assets/imgs/northAmerican.png"
-              alt="North American"
-            />
-            <img
-              className="partners"
-              src="src/assets/imgs/mediator.png"
-              alt="Mediator Debt Solutions"
-            />
-            <img
-              className="partners"
-              src="src/assets/imgs/lifeGroup.png"
-              alt="National Life Group"
-            />
-          </div>
-        </div>
-      </div>
+      <ModalForm open={open} handleClose={handleClose}/>
     </>
   );
 };
