@@ -53,13 +53,14 @@ const ModalForm = ({ open, handleClose }) => {
         }}
       >
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">What do you want to learn more about?</InputLabel>
+          <InputLabel id="demo-simple-select-label" style={{fontSize:'20px', marginLeft:'-12px'}}>What do you want to learn more about?</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={formData.subject}
             label="subject"
             onChange={handleSubmit}
+            style={{marginTop:'20px'}}
           >
             <MenuItem value={10}>Life Protection</MenuItem>
             <MenuItem value={20}>Be Your Own Bank</MenuItem>
@@ -70,7 +71,7 @@ const ModalForm = ({ open, handleClose }) => {
           </Select>
 
           <TextField
-            label="FullName"
+            label="Full Name"
             name="fullName"
             value={formData.fullName}
             onChange={handleInputChange}
