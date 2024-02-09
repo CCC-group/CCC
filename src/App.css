@@ -161,5 +161,15 @@
   color:white;
 }
 
-#demo-simple-select-label {
+
+.slick-prev {
+  margin-left: 5px; /* Position previous button from the left */
+  color: grey;
 }
+
+.slick-next {
+  margin-right: 5px; /* Position next button from the right */ 
+  color: grey;
+}
+
+
