@@ -3,8 +3,27 @@ import BusinessIcon from "@mui/icons-material/Business";
 import SchoolIcon from "@mui/icons-material/School";
 import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 import ModalForm from "./Modal";
+import axios from 'axios';
 
 const Home = ({open, handleOpen, handleClose}) => {
+  const handleDownload = () => {
+    // Replace 'path_to_your_spreadsheet' with the actual path to your spreadsheet file
+    const spreadsheetUrl = `${import.meta.env.VITE_REACT_APP_SERVER}/downloads/spreadsheet`;
+
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = spreadsheetUrl;
+    link.setAttribute('download', 'Blank Saving Spread sheet.xlsx');
+
+    // Append the link to the body
+    document.body.appendChild(link);
+
+    // Trigger the click event to initiate download
+    link.click();
+
+    // Remove the link from the body after download begins
+    document.body.removeChild(link);
+};
   return (
     <>
       <Box
@@ -15,15 +34,15 @@ const Home = ({open, handleOpen, handleClose}) => {
         height="100vh"
         backgroundColor="#dcdcdc"
       >
-        <Typography variant="h1" style={{
-          marginTop:'-90px',
+        <Typography variant="h3" style={{
+          marginTop:'20px',
           marginBottom: '30px',
           display:'flex', 
           justifyContent:'center', 
           color: '#2243b6',
         }}>
           Crystal Clear Consulting</Typography>
-        <video autoPlay muted id="homeVideo" style={{ width: "60%" }}>
+        <video autoPlay muted id="homeVideo" style={{ width: "50%", marginTop: "0px"  }}>
           <source
             src="src/assets/pexels-tea-oebel-6568706 (2160p).mp4"
             type="video/mp4"
@@ -121,23 +140,23 @@ const Home = ({open, handleOpen, handleClose}) => {
             Financial Literacy Education
           </Typography>
           <p>
-            Teaching essential money skills: budgeting, saving, investing, debt
-            management, and informed decision-making for a secure financial
-            future.
+            Teaching essential money skills: debt management, and informed decision-making for a secure financial
+            future. download our saving spread sheet to start your journey today
           </p>
           <Button
             style={{
               color: "white",
               border: "solid #BAD3D4 2px",
               fontSize: "20px",
-              margin: "20px",
+              margin: "10px",
               textTransform: "none",
               lineHeight: "25px",
             }}
             variant="outlined"
+            onClick={handleDownload}
           >
             <Typography variant="h7">
-              Learn More
+              Download
               <br />
               <Typography variant="h7" fontWeight="light">
                 {" "}
