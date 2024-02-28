@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Box,
@@ -9,28 +9,35 @@ import {
   InputLabel,
   FormControl,
 } from "@mui/material";
+import axios from "axios";
 
 const ModalForm = ({ open, handleClose }) => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     postalCode: "",
     state: "",
-    subject: {},
+    subject: "",
     message: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    console.log(formData);
   };
 
-  const handleSubmit = (e) => {
+  
+
+  const  handleSubmit = async (e) => {
     e.preventDefault();
+    const url =  `${import.meta.env.VITE_REACT_APP_SERVER}/addData`
+    await axios.post(url, formData);
     handleClose();
   };
-
+  const {subject, phone, state, email, firstName, lastName, message, postalCode } = formData;
   return (
     <Modal
       open={open}
@@ -53,27 +60,38 @@ const ModalForm = ({ open, handleClose }) => {
         }}
       >
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label" style={{fontSize:'20px', marginLeft:'-12px'}}>What do you want to learn more about?</InputLabel>
+          <InputLabel id="subject" style={{fontSize:'20px', marginLeft:'-12px'}}>Subject</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={formData.subject}
-            label="subject"
-            onChange={handleSubmit}
+            name='subject'
+            labelId="Subject"
+            id="subject"
+            value={subject}
+            onChange={handleInputChange}
+            defaultValue={MenuItem.value}
             style={{marginTop:'20px'}}
           >
-            <MenuItem value={10}>Life Protection</MenuItem>
-            <MenuItem value={20}>Be Your Own Bank</MenuItem>
-            <MenuItem value={30}>Creating Generational Wealth</MenuItem>
-            <MenuItem value={40}>Financial Security </MenuItem>
-            <MenuItem value={50}>Make Additional Income</MenuItem>
-            <MenuItem value={60}>Saving/Budgeting</MenuItem>
+            <MenuItem value='Life Protection'>Life Protection</MenuItem>
+            <MenuItem value='Be Your Own Bank'>Be Your Own Bank</MenuItem>
+            <MenuItem value='Creating Generational Wealth'>Creating Generational Wealth</MenuItem>
+            <MenuItem value='Financial Security'>Financial Security</MenuItem>
+            <MenuItem value='Make Additional Income'>Make Additional Income</MenuItem>
+            <MenuItem value='Saving/Budgeting'>Saving/Budgeting</MenuItem>
+            <MenuItem value='Other'>Other</MenuItem>
           </Select>
 
           <TextField
-            label="Full Name"
-            name="fullName"
-            value={formData.fullName}
+            label="First Name"
+            name="firstName"
+            value={firstName}
+            onChange={handleInputChange}
+            fullWidth
+            margin="normal"
+            variant="outlined"
+          />
+           <TextField
+            label="Last Name"
+            name="lastName"
+            value={lastName}
             onChange={handleInputChange}
             fullWidth
             margin="normal"
@@ -82,7 +100,7 @@ const ModalForm = ({ open, handleClose }) => {
           <TextField
             label="Email"
             name="email"
-            value={formData.email}
+            value={email}
             onChange={handleInputChange}
             fullWidth
             margin="normal"
@@ -91,7 +109,7 @@ const ModalForm = ({ open, handleClose }) => {
           <TextField
             label="Phone"
             name="phone"
-            value={formData.phone}
+            value={phone}
             onChange={handleInputChange}
             fullWidth
             margin="normal"
@@ -100,7 +118,7 @@ const ModalForm = ({ open, handleClose }) => {
           <TextField
             label="Postal Code"
             name="postalCode"
-            value={formData.postalCode}
+            value={postalCode}
             onChange={handleInputChange}
             fullWidth
             margin="normal"
@@ -109,7 +127,7 @@ const ModalForm = ({ open, handleClose }) => {
           <TextField
             label="State"
             name="state"
-            value={formData.state}
+            value={state}
             onChange={handleInputChange}
             fullWidth
             margin="normal"
@@ -118,16 +136,16 @@ const ModalForm = ({ open, handleClose }) => {
           <TextField
             label="Message"
             name="message"
-            value={formData.message}
+            value={message}
             onChange={handleInputChange}
             fullWidth
-            multiline="true"
+            multiline= {true}
             wrap="true"
             rows={5}
             margin="normal"
             variant="outlined"
           />
-          <Button type="submit" variant="contained" color="primary" fullWidth>
+          <Button type="submit" onClick={handleSubmit} variant="contained" color="primary" fullWidth>
             Submit
           </Button>
         </FormControl>
