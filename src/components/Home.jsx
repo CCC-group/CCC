@@ -3,7 +3,7 @@ import BusinessIcon from "@mui/icons-material/Business";
 import SchoolIcon from "@mui/icons-material/School";
 import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 import ModalForm from "./Modal";
-import axios from 'axios';
+
 
 const Home = ({open, handleOpen, handleClose}) => {
   const handleDownload = () => {
