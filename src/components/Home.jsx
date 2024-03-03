@@ -7,8 +7,7 @@ import ModalForm from "./Modal";
 
 const Home = ({open, handleOpen, handleClose}) => {
   const handleDownload = () => {
-    // Replace 'path_to_your_spreadsheet' with the actual path to your spreadsheet file
-    const spreadsheetUrl = `${import.meta.env.VITE_REACT_APP_SERVER}/downloads/spreadsheet`;
+    const spreadsheetUrl = `${import.meta.env.VITE_REACT_APP_SERVER}/api/downloads/spreadsheet`;
 
     // Create a link element
     const link = document.createElement('a');
