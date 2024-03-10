@@ -2,41 +2,41 @@
     {
         "service": "Financial Literacy Classes",
         "description": "Acquiring knowledge and skills to comprehend, manage, and optimize personal finances, including budgeting, investing, debt management, and informed decision-making for financial well-being and security.",
-        "icon": "src/assets/icons/timeperoson.webp"
+        "icon": "src/icons/timeperoson.webp"
     },
     {
         "service": "Budgeting/Planning",
         "description": "Thoughtfully creating a detailed roadmap for managing money, tracking income, expenses, and savings to achieve financial goals, avoid overspending, and secure future financial health.",
-        "icon": "src/assets/icons/piechart.webp"
+        "icon": "src/icons/piechart.webp"
     },
     {
         "service": "Credit/Debit Solution",
         "description": "Strategizing to manage and reduce debt effectively, utilizing consolidation, negotiation, repayment plans, and financial counseling to regain control, improve credit, and achieve financial stability.",
-        "icon": "src/assets/icons/thumdsup.webp"
+        "icon": "src/icons/thumdsup.webp"
     },
     {
         "service": "College Fund",
         "description": "Strategically managing finances to fund higher education. It involves saving, investing, and seeking scholarships to cover tuition, books, housing, and other college-related expenses effectively.",
-        "icon": "src/assets/icons/percentage.webp"
+        "icon": "src/icons/percentage.webp"
     },
     {
         "service": "Life Insurance/Annuities",
         "description": "Financial products providing beneficiaries with a lump sum or periodic payments upon policyholder's death or retirement, ensuring financial security and income continuity for loved ones or self.",
-        "icon": "src/assets/icons/percentage.webp"
+        "icon": "src/icons/percentage.webp"
     },
     {
         "service":"Estate Planning",
         "description": "Deliberate arrangement of assets, wills, trusts, and directives to manage their distribution after death, ensuring desired beneficiaries, minimizing taxes, and preserving legacies.",
-        "icon":"src/assets/icons/piechart.webp"
+        "icon":"src/icons/piechart.webp"
     },
     {
         "service":"Tax Advantage Strategies",
         "description": "Utilizing legal methods to optimize financial decisions, investments, and business structures to minimize tax liabilities, maximize returns, and enhance overall wealth accumulation.",
-        "icon":"src/assets/icons/file.webp"
+        "icon":"src/icons/file.webp"
     },
     {
         "service":"Retirement/Retirement Planning",
         "description": "Strategically preparing finances, investments, and pensions to secure a comfortable and fulfilling retirement, encompassing income, healthcare, and lifestyle considerations for later years.",
-        "icon":"src/assets/icons/timeperoson.webp"
+        "icon":"src/icons/timeperoson.webp"
     }
 ]
