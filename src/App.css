@@ -1,9 +1,6 @@
-
-
 * {
   margin: 0;
 }
-
 
 .home {
   background-image: url('./assets/imgs/CCC-header.jpg');
@@ -22,7 +19,7 @@
 }
 
 #homeContainer {
-  background-color: lightblue;
+  background-color: #dcdcdc;
   display: flex;
   height: 340px ;
   justify-content: space-between;
@@ -39,7 +36,7 @@
   top: 0;
 }
 
-.home-1{
+.home-1 {
   align-items: center;
   color: white;
   display: flex;
@@ -88,7 +85,7 @@
   margin: 10px; 
 }
 
-.partnersContainer{
+.partnersContainer {
   display: flex;
   flex-Wrap: wrap;
   justify-Content: space-between;
@@ -96,7 +93,61 @@
   margin: 50px;
 }
 
-.footer{
+.about-main {
+  background-color: #dcdcdc;
+  flex-direction: column;
+}
+
+.about {
+  position: relative;
+  height: 100vh;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: -150px;
+}
+
+.about-photo {
+  max-width: 20%;
+  max-height: 90%;
+  display: block;
+  margin: 10px; 
+}
+
+.about-photo-two {
+  max-width: 20%;
+  max-height: 90%;
+  display: block;
+  margin: 10px; 
+}
+
+.about-title {
+  padding: 20px;
+  text-align: center;
+  width: 600px;
+}
+
+.about-para {
+  padding: 30px;
+  text-align: left;
+  width: 600px;
+}
+.about-body {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.service-body {
+  background-color: #dcdcdc;
+}
+
+.service-button {
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -107,4 +158,24 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  color:white;
 }
+
+
+.slick-prev {
+  margin-left: 5px; /* Position previous button from the left */
+}
+
+.slick-next {
+  margin-right: 5px; /* Position next button from the right */ 
+}
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: gray;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
