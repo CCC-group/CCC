@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import logo from "../imgs/CCC.jpg";
+import logo from "/imgs/CCC.jpg";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
@@ -44,37 +44,37 @@ const Footer = () => {
         <div className="partnersContainer">
           <img
             className="partners"
-            src="src/imgs/mutual-of-omaha-logo-blue-png.png"
+            src="/imgs/mutual-of-omaha-logo-blue-png.png"
             alt="Mutual of Omaha Logo"
           />
           <img
             className="partners"
-            src="src/imgs/Silac.png"
+            src="/imgs/Silac.png"
             alt="Silac Logo"
           />
           <img
             className="partners"
-            src="src/imgs/americanNational.png"
+            src="/imgs/americanNational.png"
             alt="American National"
           />
           <img
             className="partners"
-            src="src/imgs/forestersFinancialLogo.png"
+            src="/imgs/forestersFinancialLogo.png"
             alt="Forester Financial"
           />
           <img
             className="partners"
-            src="src/imgs/northAmerican.png"
+            src="/imgs/northAmerican.png"
             alt="North American"
           />
           <img
             className="partners"
-            src="src/imgs/mediator.png"
+            src="/imgs/mediator.png"
             alt="Mediator Debt Solutions"
           />
           <img
             className="partners"
-            src="src/imgs/lifeGroup.png"
+            src="/imgs/lifeGroup.png"
             alt="National Life Group"
           />
         </div>
