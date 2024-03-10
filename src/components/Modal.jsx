@@ -33,7 +33,7 @@ const ModalForm = ({ open, handleClose }) => {
 
   const  handleSubmit = async (e) => {
     e.preventDefault();
-    const url =  `${import.meta.env.VITE_REACT_APP_SERVER}/addData`
+    const url =  `${import.meta.env.VITE_REACT_APP_SERVER}/api/addData`
     await axios.post(url, formData);
     handleClose();
   };
