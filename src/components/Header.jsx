@@ -1,5 +1,5 @@
 import { Link } from '@mui/material'
-import logo from '../assets/imgs/CCC.jpg'
+import logo from '../imgs/CCC-logo.png'
 
 const Header = () => {
   

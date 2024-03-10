@@ -43,7 +43,7 @@ const Home = ({open, handleOpen, handleClose}) => {
           Crystal Clear Consulting</Typography>
         <video autoPlay muted id="homeVideo" style={{ width: "50%", marginTop: "0px"  }}>
           <source
-            src="src/assets/pexels-tea-oebel-6568706 (2160p).mp4"
+            src="src/pexels-tea-oebel-6568706 (2160p).mp4"
             type="video/mp4"
           />
         </video>
