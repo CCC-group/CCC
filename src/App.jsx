@@ -1,17 +1,19 @@
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import {Provider} from "react-redux";
+import {store} from "./redux/index"
 import Home from "./components/Home";
 import Events from "./components/Events";
 import Services from "./components/Services";
 import About from "./components/About";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import AdminSignIn from "./components/AdminSignIn";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -42,16 +44,17 @@ function App() {
     setOpen(false);
   };
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Routes>
         <Route path="/" element={<Home open={open} handleOpen={handleOpen} handleClose={handleClose}/>} />
         <Route path="/budgeting" element={<Services />} />
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/admin-signIn" element={<AdminSignIn/>} />
       </Routes>
       <Footer />
-    </>
+    </Provider>
   );
 }
 
