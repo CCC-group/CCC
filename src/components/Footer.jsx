@@ -1,8 +1,9 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 import logo from "/imgs/CCC.jpg";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
+import AdminSignIn from "./AdminSignIn";
 
 const Footer = () => {
   return (
@@ -128,6 +129,11 @@ const Footer = () => {
           }}
         >
           &copy;2024 All Rights Reserved
+        </Typography>
+        <Typography variant="body1" style={{ color: "white" }}>
+          <Link href="/admin-signIn">
+            Admin Login
+          </Link>
         </Typography>
       </div>
     </div>
