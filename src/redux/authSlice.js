@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+
 
 export const signIn = createAsyncThunk(
   "auth/signIn",
@@ -11,10 +12,11 @@ export const signIn = createAsyncThunk(
         email,
         password
       );
-      console.log("this is the user credentials:", userCredentials);
       const user = userCredentials.user;
       // Return user object as the fulfilled action payload
-      return user;
+      const token = await auth.currentUser.getIdToken()
+      const action = { payload: {idToken: token, email:user.email}};
+      return action;
     } catch (error) {
       // Return error message as the rejected action payload
       return rejectWithValue(error.message);
@@ -23,8 +25,6 @@ export const signIn = createAsyncThunk(
 );
 
 const initialState = {
-  email: "",
-  password: "",
   isLoggedIn: false,
   user: null,
   error: null,
@@ -34,11 +34,6 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    updateCredentials(state, action) {
-      const { email, password } = action.payload;
-      state.email = email;
-      state.password = password;
-    },
     signInSuccess(state, action) {
       state.isLoggedIn = true;
       state.user = action.payload;
@@ -49,7 +44,9 @@ const authSlice = createSlice({
       state.user = null;
       state.error = action.payload;
     },
-    signOut(state) {
+      logOut(state) {
+      const auth = getAuth();
+      signOut(auth);
       state.isLoggedIn = false;
       state.user = null;
       state.error = null;
@@ -57,6 +54,6 @@ const authSlice = createSlice({
   },
 });
 
-export const {updateCredentials, signInSuccess, signInFailure, signOut } = authSlice.actions;
+export const {updateCredentials, signInSuccess, signInFailure, logOut } = authSlice.actions;
 
 export default authSlice.reducer;

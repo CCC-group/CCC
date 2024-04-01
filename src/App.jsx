@@ -1,7 +1,7 @@
-import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
 import {Provider} from "react-redux";
 import {store} from "./redux/index"
 import Home from "./components/Home";
@@ -32,28 +32,38 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 const analytics = getAnalytics(firebaseApp);
+const auth = getAuth(firebaseApp);
+
+const routes = createBrowserRouter([
+  { 
+    path: "/",
+    element:<Home/>
+  },
+  {
+    path: "/budgeting",
+    element: <Services />
+  },
+  {
+    path:"/about",
+    element: <About />
+  },
+  {
+    path:"/events",
+    element:<Events />
+  },
+  {
+    path: "/admin-signIn",
+    element: <AdminSignIn/>
+  }
+])
+
 
 function App() {
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
     <Provider store={store}>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home open={open} handleOpen={handleOpen} handleClose={handleClose}/>} />
-        <Route path="/budgeting" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/admin-signIn" element={<AdminSignIn/>} />
-      </Routes>
-      <Footer />
+    <Header />
+    <RouterProvider router={routes}/>
+    <Footer/>
     </Provider>
   );
 }

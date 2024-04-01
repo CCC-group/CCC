@@ -3,9 +3,21 @@ import BusinessIcon from "@mui/icons-material/Business";
 import SchoolIcon from "@mui/icons-material/School";
 import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 import ModalForm from "./Modal";
+import { useState } from "react";
 
 
-const Home = ({open, handleOpen, handleClose}) => {
+const Home = () => {
+  
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const handleDownload = () => {
     const spreadsheetUrl = `${import.meta.env.VITE_REACT_APP_SERVER}/api/downloads/spreadsheet`;
 
