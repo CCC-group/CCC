@@ -1,11 +1,12 @@
 import { Box, Typography, Link } from "@mui/material";
+import { useSelector, useDispatch } from "react-redux";
 import logo from "/imgs/CCC.jpg";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
-import AdminSignIn from "./AdminSignIn";
 
 const Footer = () => {
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   return (
     <div>
       <div>
@@ -48,11 +49,7 @@ const Footer = () => {
             src="/imgs/mutual-of-omaha-logo-blue-png.png"
             alt="Mutual of Omaha Logo"
           />
-          <img
-            className="partners"
-            src="/imgs/Silac.png"
-            alt="Silac Logo"
-          />
+          <img className="partners" src="/imgs/Silac.png" alt="Silac Logo" />
           <img
             className="partners"
             src="/imgs/americanNational.png"
@@ -131,9 +128,7 @@ const Footer = () => {
           &copy;2024 All Rights Reserved
         </Typography>
         <Typography variant="body1" style={{ color: "white" }}>
-          <Link href="/admin-signIn">
-            Admin Login
-          </Link>
+          {isLoggedIn ? null :<Link href="/admin-signIn">Admin Login</Link> }
         </Typography>
       </div>
     </div>
