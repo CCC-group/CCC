@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 
+
 export const signIn = createAsyncThunk(
   "auth/signIn",
   async ({ email, password }, { rejectWithValue }) => {
@@ -16,6 +17,7 @@ export const signIn = createAsyncThunk(
       // Return user object as the fulfilled action payload
       const token = await auth.currentUser.getIdToken()
       const action = { payload: {idToken: token, email:user.email}};
+      console.log(action);
       return action;
     } catch (error) {
       // Return error message as the rejected action payload
