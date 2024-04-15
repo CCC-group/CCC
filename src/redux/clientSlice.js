@@ -5,39 +5,54 @@ const url = import.meta.env.VITE_REACT_APP_SERVER;
 
 export const deleteClient = createAsyncThunk(
   "clients/deleteClient",
-  async (clientId, { rejectWithValue }) => {
+  async (clientId, { rejectWithValue, getState }) => {
     try {
-      await axios.delete(`${url}/api/messages/${clientId}`);
+      const { idToken } = getState().auth.user;
+      await axios.delete(`${url}/api/messages/${clientId}`, {
+        headers: {
+          Authorization: `Bearer ${idToken}`,
+        },
+      });
+      return clientId; // Return the clientId if deletion is successful
     } catch (error) {
-      return rejectWithValue(error.message);
+      throw error; // Throw the error instead of using rejectWithValue
     }
   }
 );
 
-// Async thunk for getting all clients
 export const getClients = createAsyncThunk(
   "clients/getClients",
-  async (_, { rejectWithValue }) => {
+  async (_, { rejectWithValue, getState }) => {
     try {
-      const response = await axios.get(`${url}/api/messages`);
+      const { idToken } = getState().auth.user;
+      const response = await axios.get(`${url}/api/messages`, {
+        headers: {
+          Authorization: `Bearer ${idToken}`,
+        },
+      });
+      console.log(response.data.clientData);
       return response.data.clientData;
     } catch (error) {
-      return rejectWithValue(error.message);
+      throw error; // Throw the error instead of using rejectWithValue
     }
   }
 );
-
 // Async thunk for updating a client
-export const updateClient = createAsyncThunk(
-  "clients/updateClient",
-  async (client, { rejectWithValue }) => {
-    try {
-      await axios.put(`${url}/api/messages/${client.id}`, client);
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
+// export const updateClient = createAsyncThunk(
+//   "clients/updateClient",
+//   async (client, { rejectWithValue, getState }) => {
+//     try {
+//       const { idToken } = getState().auth.user; // Get user ID token from state
+//       await axios.put(`${url}/api/messages/${client.id}`, {
+//         headers: {
+//           Authorization: `Bearer ${idToken}` // Include ID token in the request headers
+//         }
+//       });
+//     } catch (error) {
+//       return rejectWithValue(error.message);
+//     }
+//   }
+// );
 
 const clientSlice = createSlice({
   name: "clients",
@@ -78,5 +93,6 @@ const clientSlice = createSlice({
     );
   },
 });
+
 
 export default clientSlice.reducer;
