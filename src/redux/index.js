@@ -1,16 +1,18 @@
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
+import { rootReducer } from "./rootReducer";
 import storage from "redux-persist/lib/storage";
-import authSlice from "./authSlice";
-import clientSlice from "./clientSlice";
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 const persistConfig = {
   key: "root",
   storage,
+  whitelist: ['auth'],
+  debug: true,
+  stateReconciler: autoMergeLevel2
 };
-const reducers = combineReducers({ auth: authSlice, clients: clientSlice });
-const persistedReducer = persistReducer(persistConfig, reducers);
 
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({reducer: persistedReducer,});
 

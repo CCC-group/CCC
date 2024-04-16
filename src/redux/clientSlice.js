@@ -30,39 +30,32 @@ export const getClients = createAsyncThunk(
           Authorization: `Bearer ${idToken}`,
         },
       });
-      console.log(response.data.clientData);
       return response.data.clientData;
     } catch (error) {
       throw error; // Throw the error instead of using rejectWithValue
     }
   }
 );
-// Async thunk for updating a client
-// export const updateClient = createAsyncThunk(
-//   "clients/updateClient",
-//   async (client, { rejectWithValue, getState }) => {
-//     try {
-//       const { idToken } = getState().auth.user; // Get user ID token from state
-//       await axios.put(`${url}/api/messages/${client.id}`, {
-//         headers: {
-//           Authorization: `Bearer ${idToken}` // Include ID token in the request headers
-//         }
-//       });
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+
+const initialState = {
+  clients: [],
+  status: null,
+  error: null,
+};
 
 const clientSlice = createSlice({
   name: "clients",
-  initialState: {
-    clients: [],
-    status: "idle",
-    error: null,
-  },
+  initialState,
   reducers: {
     // Add reducers for other CRUD operations like addClient, updateClient, deleteClient
+    addClients(state, action) {
+      state.clients = [...action.payload];
+      state.error = null;
+    },
+    removeClient(state, action) {
+      state.clients = [...action.payload];
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     // Add a matcher for any action type that ends with "/pending"
@@ -78,7 +71,6 @@ const clientSlice = createSlice({
       (action) => action.type.endsWith("/fulfilled"),
       (state, action) => {
         state.status = "succeeded";
-        // Assuming the payload contains the updated client data
         state.clients = action.payload;
       }
     );
@@ -93,6 +85,5 @@ const clientSlice = createSlice({
     );
   },
 });
-
 
 export default clientSlice.reducer;
