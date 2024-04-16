@@ -1,31 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { List, ListItem, ListItemText, Typography, Divider, Paper, Button, IconButton, Tooltip } from '@mui/material';
 import { Delete, Note, ContentCopy } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import  {getClients} from '../redux/clientSlice';;
-// Sample client data
-// const clients = [
-//   {
-//     id: 1,
-//     email: "greasonemily@gmail.com",
-//     firstName: "Emily",
-//     lastName: "Greason",
-//     message: "sdfseg",
-//     phone: "8284340394",
-//     postalCode: "98512",
-//     state: "WA",
-//     subject: "Other",
-//     timestamp: "March 3, 2024 at 2:55:06 PM UTC-6"
-//   },
-//   // Add more clients if needed
-// ];
 
 // Mailbox component
 const Mailbox = () => {
   const dispatch = useDispatch();
-  const clients = useSelector((state) => state.clients.clients); 
+  const clients = useSelector((state) => state.clients.clients);
+ 
 
-  useEffect(() => {
+  useMemo(() => {
     // Dispatch the async thunk to fetch clients when the component mounts
     dispatch(getClients());
   }, [dispatch]);

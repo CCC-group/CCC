@@ -16,9 +16,8 @@ export const signIn = createAsyncThunk(
       const user = userCredentials.user;
       // Return user object as the fulfilled action payload
       const token = await auth.currentUser.getIdToken()
-      const action = { payload: {idToken: token, email:user.email}};
-      console.log(action);
-      return action;
+      const payload =  {idToken: token, email:user.email};
+      return payload;
     } catch (error) {
       // Return error message as the rejected action payload
       return rejectWithValue(error.message);
@@ -28,7 +27,7 @@ export const signIn = createAsyncThunk(
 
 const initialState = {
   isLoggedIn: false,
-  user: null,
+  user: {},
   error: null,
 };
 
@@ -56,6 +55,6 @@ const authSlice = createSlice({
   },
 });
 
-export const {updateCredentials, signInSuccess, signInFailure, logOut } = authSlice.actions;
+export const { signInSuccess, signInFailure, logOut } = authSlice.actions;
 
 export default authSlice.reducer;

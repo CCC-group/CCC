@@ -29,7 +29,6 @@ function AdminSignIn() {
     try {
       const action = await dispatch(signIn({ ...formData }));
       if (action.payload) {
-        console.log(action);
         dispatch(signInSuccess(action.payload));
         navigate('/');
       }
