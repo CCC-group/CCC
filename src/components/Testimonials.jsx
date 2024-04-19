@@ -84,7 +84,7 @@ function Testimonials() {
         </Slider>
       </Box>
       <img
-        src="src/assets/imgs/people.jpg"
+        src="/imgs/people.jpg"
         style={{
           position: "absolute",
           top: 0,

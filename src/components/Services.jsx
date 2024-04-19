@@ -1,7 +1,7 @@
 import { Button, Card, Typography, Grid, CardHeader, Box } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import Testimonials from "./Testimonials";
-import services from "../assets/services.json";
+import services from "/src/services.json";
 
 const Services = () => {
   return (

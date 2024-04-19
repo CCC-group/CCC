@@ -1,8 +1,9 @@
-import { Box, Typography } from "@mui/material";
-import logo from "../assets/imgs/CCC.jpg";
+import { Box, Typography, Link } from "@mui/material";
+import logo from "/imgs/CCC.jpg";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
+import AdminSignIn from "./AdminSignIn";
 
 const Footer = () => {
   return (
@@ -44,37 +45,37 @@ const Footer = () => {
         <div className="partnersContainer">
           <img
             className="partners"
-            src="src/assets/imgs/mutual-of-omaha-logo-blue-png.png"
+            src="/imgs/mutual-of-omaha-logo-blue-png.png"
             alt="Mutual of Omaha Logo"
           />
           <img
             className="partners"
-            src="src/assets/imgs/Silac.png"
+            src="/imgs/Silac.png"
             alt="Silac Logo"
           />
           <img
             className="partners"
-            src="src/assets/imgs/americanNational.png"
+            src="/imgs/americanNational.png"
             alt="American National"
           />
           <img
             className="partners"
-            src="src/assets/imgs/forestersFinancialLogo.png"
+            src="/imgs/forestersFinancialLogo.png"
             alt="Forester Financial"
           />
           <img
             className="partners"
-            src="src/assets/imgs/northAmerican.png"
+            src="/imgs/northAmerican.png"
             alt="North American"
           />
           <img
             className="partners"
-            src="src/assets/imgs/mediator.png"
+            src="/imgs/mediator.png"
             alt="Mediator Debt Solutions"
           />
           <img
             className="partners"
-            src="src/assets/imgs/lifeGroup.png"
+            src="/imgs/lifeGroup.png"
             alt="National Life Group"
           />
         </div>
@@ -128,6 +129,11 @@ const Footer = () => {
           }}
         >
           &copy;2024 All Rights Reserved
+        </Typography>
+        <Typography variant="body1" style={{ color: "white" }}>
+          <Link href="/admin-signIn">
+            Admin Login
+          </Link>
         </Typography>
       </div>
     </div>

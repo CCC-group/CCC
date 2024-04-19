@@ -3,7 +3,7 @@
 }
 
 .home {
-  background-image: url('./assets/imgs/CCC-header.jpg');
+  background-image: url('/imgs/CCC-header.jpg');
   background-size: cover;
   height: 115vh;
   position: relative;
