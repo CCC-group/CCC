@@ -6,7 +6,7 @@ import MenuDrawer from './MenuDrawer';
 
 const Pages = [
   { name: 'Home', link:'/'},
-  { name: 'Our Team', link:'/abpit'},
+  { name: 'Our Team', link:'/about'},
   { name: 'Services', link: '/budgeting'},
   { name: 'Events', link: '/events'},
 ];
