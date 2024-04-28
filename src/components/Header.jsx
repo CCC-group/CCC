@@ -1,9 +1,65 @@
-import { useSelector, useDispatch } from "react-redux";
-import { Link, Button, Grid } from "@mui/material";
-import { logOut } from "../redux/authSlice";
-import logo from "/imgs/CCC.jpg";
+// import { Link } from '@mui/material'
+import logo from '/imgs/CCC.jpg'
+import {AppBar, Toolbar, Tab, Tabs, useMediaQuery, useTheme} from '@mui/material';
+import { useState } from 'react';
+import MenuDrawer from './MenuDrawer';
+
+const Pages = [
+  { name: 'Home', link:'/'},
+  { name: 'Our Team', link:'/abpit'},
+  { name: 'Services', link: '/budgeting'},
+  { name: 'Events', link: '/events'},
+];
 
 const Header = () => {
+  const [value, setValue] = useState(0);
+  const theme = useTheme();
+   console.log(theme);
+   const isMatch = useMediaQuery(theme.breakpoints.down('md'));
+   console.log(isMatch);
+return (
+  <div>
+    <AppBar sx={{background: 'black'}}>
+      <Toolbar>
+        <a className="navbar-brand" href="/">
+            <img src={logo} 
+              alt="Logo" 
+              width="120" 
+              height="114" 
+              className="d-inline-block align-text-top"/>
+        </a>
+            {
+              isMatch ? (
+                <>
+                  <MenuDrawer/>
+
+                </>
+              ) : (
+                <Tabs 
+                textColor='inherit' 
+                value={value} 
+                onChange={(e, newValue)=> setValue(newValue)} 
+                indicatorColor='primary'
+              >
+                { 
+                  Pages.map((page, index) => (
+                    <Tab key={index} label= {page.name} component='a' href={page.link}/>
+                  ))
+                }
+              </Tabs> 
+              )
+            }
+       
+      </Toolbar>
+    </AppBar>
+  {/* // <div className="header"> */}
+    
+      {/* <a className="navbar-brand" href="/">
+        <img src={logo} 
+          alt="Logo" 
+          width="120" 
+          height="114" 
+          className="d-inline-block align-text-top"/>
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
 
