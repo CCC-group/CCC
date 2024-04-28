@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { List, ListItem, ListItemText, Typography, Divider, Paper, Button, IconButton, Tooltip } from '@mui/material';
 import { Delete, Note, ContentCopy } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
-import  {getClients} from '../redux/clientSlice';;
+import { getClients, deleteClient } from '../redux/clientSlice';;
 
 // Mailbox component
 const Mailbox = () => {
@@ -18,16 +18,16 @@ const Mailbox = () => {
   const [selectedUser, setSelectedUser] = useState(null);
 
   const handleUserSelect = (user) => {
-    setSelectedUser(user);
+    selectedUser ? setSelectedUser(null) : setSelectedUser(user);
   };
 
   const handleAddNote = () => {
     console.log("Note added to the message");
   };
 
-  const handleDeleteMessage = () => {
+  const handleDeleteMessage = (id) => {
     console.log("Message deleted");
-    setSelectedUser(null);
+    dispatch(deleteClient(id));
   };
 
   const handleCopyEmail = () => {
@@ -90,7 +90,7 @@ const Mailbox = () => {
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="Delete Message">
-                  <IconButton onClick={handleDeleteMessage}>
+                  <IconButton onClick={handleDeleteMessage(client.id)}>
                     <Delete />
                   </IconButton>
                 </Tooltip>

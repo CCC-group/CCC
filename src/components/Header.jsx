@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Link, Button } from "@mui/material";
+import { Link, Button, Grid } from "@mui/material";
 import { logOut } from "../redux/authSlice";
 import logo from "/imgs/CCC.jpg";
 
@@ -24,6 +24,7 @@ const Header = () => {
       <ul>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
+            gri
             <div className="links">
               <Link href="/">Home</Link>
               <Link href="/about">Our Team</Link>
@@ -32,6 +33,7 @@ const Header = () => {
               {isLoggedIn ? (
                 <>
                   <Link href="/mailBox">Mailbox</Link>
+
                   <Button
                     onClick={handleSignOut}
                     style={{ marginLeft: "750px" }}
