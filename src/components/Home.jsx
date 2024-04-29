@@ -1,14 +1,21 @@
-import { Typography, Button, Box, Link } from "@mui/material";
+import {
+  Typography,
+  Button,
+  Grid,
+  Link,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import BusinessIcon from "@mui/icons-material/Business";
 import SchoolIcon from "@mui/icons-material/School";
 import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 import ModalForm from "./Modal";
 import { useState } from "react";
 
-
 const Home = () => {
-  
   const [open, setOpen] = useState(false);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleOpen = () => {
     setOpen(true);
@@ -19,66 +26,81 @@ const Home = () => {
   };
 
   const handleDownload = () => {
-    const spreadsheetUrl = `${import.meta.env.VITE_REACT_APP_SERVER}/api/downloads/spreadsheet`;
+    const spreadsheetUrl = `${
+      import.meta.env.VITE_REACT_APP_SERVER
+    }/api/downloads/spreadsheet`;
 
-    // Create a link element
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = spreadsheetUrl;
-    link.setAttribute('download', 'Blank Saving Spread sheet.xlsx');
-
-    // Append the link to the body
+    link.setAttribute("download", "Blank Saving Spread sheet.xlsx");
     document.body.appendChild(link);
-
-    // Trigger the click event to initiate download
     link.click();
-
-    // Remove the link from the body after download begins
     document.body.removeChild(link);
-};
+  };
+
   return (
     <>
-      <Box
-        display="flex"
-        flexDirection="column"
+      <Grid
+        container
+        spacing={2}
         alignItems="center"
         justifyContent="center"
-        height="100vh"
-        backgroundColor="#dcdcdc"
+        flexDirection="column"
+        style={{ minHeight: "100vh" }}
       >
-        <Typography variant="h3" style={{
-          marginTop:'20px',
-          marginBottom: '30px',
-          display:'flex', 
-          justifyContent:'center', 
-          color: '#2243b6',
-        }}>
-          Crystal Clear Consulting</Typography>
-        <video autoPlay muted id="homeVideo" style={{ width: "70%", marginTop: "0px"  }}>
-          <source
-            src="../pexels-tea-oebel-6568706 (2160p).mp4"
-            type="video/mp4"
-          />
-        </video>
-
-        <Button
-          variant="contained"
-          style={{
-            borderRadius: 20,
-            marginTop: "2%",
-            backgroundColor: "#1D66C0",
-            textTransform: "none",
-          }}
-        >
-          <Typography variant="h7" fontWeight="bold">
-            Get an Appointment <br />
-            <Typography variant="h7" fontWeight="light">
-              {" "}
-              Click here
-            </Typography>
+        <Grid item xs={12}>
+          <Typography
+            variant="h3"
+            style={{
+              marginTop: isSmallScreen ? "50px" : "150px",
+              marginBottom: "30px",
+              display: "flex",
+              justifyContent: "center",
+              color: "#2243b6",
+              textAlign: "center", // Center text horizontally
+            }}
+          >
+            Crystal Clear Consulting
           </Typography>
-        </Button>
-      </Box>
-
+        </Grid>
+        <Grid item xs={12}>
+          <video
+            autoPlay
+            muted
+            id="homeVideo"
+            style={{
+              width: "70%",
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }} // Center the video horizontally
+          >
+            <source
+              src="../pexels-tea-oebel-6568706 (2160p).mp4"
+              type="video/mp4"
+            />
+          </video>
+        </Grid>
+        <Grid item xs={12}>
+          <Button
+            variant="contained"
+            style={{
+              borderRadius: 20,
+              marginTop: "2%",
+              backgroundColor: "#1D66C0",
+              textTransform: "none",
+            }}
+          >
+            <Typography variant="h7" fontWeight="bold">
+              Get an Appointment <br />
+              <Typography variant="h7" fontWeight="light">
+                {" "}
+                Click here
+              </Typography>
+            </Typography>
+          </Button>
+        </Grid>
+      </Grid>
       <div className="home">
         <div className="home-1">
           <Typography variant="h4" fontWeight={"light"}>
@@ -123,7 +145,6 @@ const Home = () => {
               lineHeight: "25px",
             }}
             variant="outlined"
-            
           >
             <Typography variant="h7" style={{ lineHeight: "30px" }}>
               Meet the Team
@@ -151,8 +172,9 @@ const Home = () => {
             Financial Literacy Education
           </Typography>
           <p>
-            Teaching essential money skills: debt management, and informed decision-making for a secure financial
-            future. download our saving spread sheet to start your journey today
+            Teaching essential money skills: debt management, and informed
+            decision-making for a secure financial future. download our saving
+            spread sheet to start your journey today
           </p>
           <Button
             style={{
@@ -213,7 +235,7 @@ const Home = () => {
           </Button>
         </div>
       </div>
-      <ModalForm open={open} handleClose={handleClose}/>
+      <ModalForm open={open} handleClose={handleClose} />
     </>
   );
 };

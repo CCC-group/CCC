@@ -7,10 +7,10 @@ import { store } from "./redux/index";
 import { persister } from "./redux/index";
 import { PersistGate } from "redux-persist/integration/react";
 import Home from "./components/Home";
+import Header from "./components/Header"
 import Events from "./components/Events";
 import Services from "./components/Services";
 import About from "./components/About";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AdminSignIn from "./components/AdminSignIn";
 import Mailbox from "./components/Mailbox";
