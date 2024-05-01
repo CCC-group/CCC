@@ -8,7 +8,7 @@ const About = () => {
             className="about-photo" 
             src="/imgs/about-stock-photo.jpg" 
             alt="stock-photo" 
-            style={{maxWidth:'100%', heigh:'auto'}}/>
+            style={{maxWidth:'100%', height:'auto', justifyContent: 'center'}}/>
       </Grid>
       <Grid item xs={12} sm={6}>
       <div className="about-body">
@@ -36,8 +36,9 @@ const About = () => {
             </div>
           </div>
       </Grid>
-      <Grid item xs={12}>
-      <div style={{display:'flex', flexDirection:'column'}}>
+      <Grid item xs={12} sm={6}>
+      {/* <div style={{display:'flex', flexDirection:'column'}}> */}
+      <div className="about-body">
           <Typography className="about-title" variant="h4" style={{fontWeight:'bold', color: '#2243b6', marginBottom: '10px'}}>
             Our Vision for Community-Driven Financial Empowerment
          </Typography>
@@ -48,13 +49,12 @@ const About = () => {
           </div>
         </div>
       </Grid>
-      <Grid item xs={12} sm={6} md={4}>
+      <Grid item xs={12} sm={6}>
       <img
             className="about-photo-two"
             src="/imgs/about-stock-photo4.jpg"
             alt="stock-photo2"
-            style={{maxWidth:'40%', marginRight:'20px'
-          }}/>
+            style={{maxWidth:'100%', height:'auto'}}/>
       </Grid>
     </Grid>
   //   <div className="about-main" style={{ flexGrow: 1, overflow: 'auto' }}>
