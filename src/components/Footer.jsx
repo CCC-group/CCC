@@ -3,7 +3,7 @@ import logo from "/imgs/CCC.jpg";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
-import AdminSignIn from "./AdminSignIn";
+// import AdminSignIn from "./AdminSignIn";
 
 const Footer = () => {
   return (
