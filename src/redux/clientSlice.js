@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const url = import.meta.env.VITE_REACT_APP_SERVER;
 
 export const deleteClient = createAsyncThunk(
   "clients/deleteClient",
